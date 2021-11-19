@@ -12,7 +12,15 @@ function getPin() {
 // Display Generated Pin :
 function generatePin() {
     document.getElementById('pin').value = getPin();
+    emptyValue('output');
+    displayResult('none','none');
 };
+
+// Remove Displayed pin :
+function emptyValue(id){
+    const clearOutput = document.getElementById(id);
+    clearOutput.value = '';
+}
 
 
 // Calculator :
@@ -42,6 +50,7 @@ function verifyPin() {
     else {
         displayResult('none','block');
     }
+    emptyValue('pin');
 };
 
 function displayResult(correctStatus, incorrectStatus) {
